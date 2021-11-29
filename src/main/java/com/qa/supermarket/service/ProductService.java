@@ -1,6 +1,8 @@
 package com.qa.supermarket.service;
 
 import org.springframework.stereotype.Service;
+
+import com.qa.supermarket.datamodel.Product;
 import com.qa.supermarket.repo.ProductRepo;
 
 // This is where the business logic will be contained 
@@ -13,5 +15,13 @@ public class ProductService {
 		this.repo = repo;
 	}
 	
+	
+	
+	// Method to create a new product createProduct
+	
+	public Product createProduct(Product product) {
+		// Add the product and save
+		return this.repo.save(product);
+	}
 
 }
