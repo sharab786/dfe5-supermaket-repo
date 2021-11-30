@@ -4,6 +4,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -43,6 +45,18 @@ public class ProductControllerIntegrationTests {
 		ResultMatcher content = content().json(testProductAsJsonResponse);
 		
 		this.mvc.perform(request).andExpect(status).andExpect(content);
+	}
+	
+	// Test the get all API 
+	@Test
+	void getAllProductsTest() throws Exception{
+		String listOfProductssAsJSON = this.mapper.writeValueAsString(List.of
+				(new Product(1, "Awesome Fresh Shoes", "Footwear", 59.99, "black", 495, true),
+				new Product(2, "Sausage Multi", "Dresses", 50.50, "orange", 100, false),
+				new Product(3, "Superstar Trainers", "Footwear", 179.50, "white", 24, true),
+				new Product(4, "Rustic Soft", "Coats", 90.00, "turquoise", 252, true),
+				new Product(5, "Awesome Fresh Joggers", "Sportswear", 29.99, "black", 495, false)
+				));
 	}
 
 }

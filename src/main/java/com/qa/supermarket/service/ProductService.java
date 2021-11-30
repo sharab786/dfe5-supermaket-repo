@@ -1,5 +1,7 @@
 package com.qa.supermarket.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.qa.supermarket.datamodel.Product;
@@ -24,4 +26,10 @@ public class ProductService {
 		return this.repo.save(product);
 	}
 
+	
+	// Method to get all products that exist
+	public List<Product> getAllProducts() {
+		// SELECT * FROM book;
+		return this.repo.findAll();
+	}
 }
