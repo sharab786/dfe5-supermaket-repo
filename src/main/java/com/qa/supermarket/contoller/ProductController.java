@@ -49,7 +49,7 @@ public class ProductController {
 	 // This is the mapping to update a product by id 
 	 @PutMapping("/update/{id}")
 	 public ResponseEntity<Product> updateProduct(@RequestBody Product product, @PathVariable Integer id) {
-		 ResponseEntity<Product> response = new ResponseEntity<Product>(this.service.updateProduct(product, id), HttpStatus.OK);
+		 ResponseEntity<Product> response = new ResponseEntity<Product>(this.service.updateProduct(product, id), HttpStatus.ACCEPTED);
 		 return response;
 	 }
 }
