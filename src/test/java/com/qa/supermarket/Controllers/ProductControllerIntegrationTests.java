@@ -1,5 +1,6 @@
 package com.qa.supermarket.Controllers;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -57,6 +58,15 @@ public class ProductControllerIntegrationTests {
 				new Product(4, "Rustic Soft", "Coats", 90.00, "turquoise", 252, true),
 				new Product(5, "Awesome Fresh Joggers", "Sportswear", 29.99, "black", 495, false)
 				));
+		
+		RequestBuilder request = get("/product");
+		
+		ResultMatcher status = status().isOk();
+		ResultMatcher content = content().json(listOfProductssAsJSON);
+		
+		this.mvc.perform(request).andExpect(status).andExpect(content);
+			
+		
 	}
 
 }
