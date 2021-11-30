@@ -49,4 +49,10 @@ public class ProductService {
 		// save updated product
 		return this.repo.save(productToUpdate);
 	}
+	
+	public boolean deleteProduct(Integer id) {
+		this.repo.deleteById(id);
+		boolean exists = this.repo.existsById(id);
+		return !exists;
+	}
 }
