@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -52,4 +53,16 @@ public class ProductController {
 		 ResponseEntity<Product> response = new ResponseEntity<Product>(this.service.updateProduct(product, id), HttpStatus.ACCEPTED);
 		 return response;
 	 }
+	 
+	 // This is the mapping to delete a product by id
+	 @DeleteMapping("/delete/{id}")
+	    public ResponseEntity<?> deleteProduct(@PathVariable Integer id) {
+	    	boolean deleted = this.service.deleteProduct(id);
+	    			if(deleted) {
+	    				return new ResponseEntity<>(HttpStatus.OK);
+	    						}
+	    			else {
+	    				return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+	    					}
+	    }
 }

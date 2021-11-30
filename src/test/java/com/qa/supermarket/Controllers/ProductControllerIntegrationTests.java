@@ -1,5 +1,6 @@
 package com.qa.supermarket.Controllers;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
@@ -85,5 +86,11 @@ public class ProductControllerIntegrationTests {
 		this.mvc.perform(request).andExpect(status).andExpect(content);
 	}
 	 
-
+	
+	// This is the delete API test
+	@Test
+	void deleteProduct() throws Exception{
+			
+	this.mvc.perform(delete("/product/delete/2")).andExpect(status().isOk());
+	}
 }
