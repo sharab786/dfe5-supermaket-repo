@@ -1,6 +1,7 @@
 package com.qa.supermarket.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -31,5 +32,21 @@ public class ProductService {
 	public List<Product> getAllProducts() {
 		// SELECT * FROM book;
 		return this.repo.findAll();
+	}
+	
+	// Method to update a product
+	public Product updateProduct(Product product, Integer id) {
+		// find the product to update
+		Optional<Product> productToFind = this.repo.findById(id);
+		Product productToUpdate = productToFind.get();
+		// set that product with the new values
+		productToUpdate.setName(product.getName());
+		productToUpdate.setCategory(product.getCategory());
+		productToUpdate.setPrice(product.getPrice());
+		productToUpdate.setColour(product.getColour());
+		productToUpdate.setQuantity(product.getQuantity());
+		productToUpdate.setActiveForSale(product.isActiveForSale());	
+		// save updated product
+		return this.repo.save(productToUpdate);
 	}
 }
