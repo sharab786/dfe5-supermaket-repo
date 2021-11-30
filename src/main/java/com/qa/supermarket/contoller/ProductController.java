@@ -65,4 +65,10 @@ public class ProductController {
 	    				return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	    					}
 	    }
+	 
+	 @GetMapping("/{price}")  
+	    public ResponseEntity<List<Product>> getProductsByPriceGreater(@PathVariable double price) {
+	        ResponseEntity<List<Product>> response = new ResponseEntity<List<Product>>(this.service.getProductsByPriceGreater(price), HttpStatus.OK); // 200       
+	        return response;
+	 }
 }

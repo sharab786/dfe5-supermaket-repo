@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+
 import com.qa.supermarket.datamodel.Product;
 import com.qa.supermarket.repo.ProductRepo;
 
@@ -54,5 +55,10 @@ public class ProductService {
 		this.repo.deleteById(id);
 		boolean exists = this.repo.existsById(id);
 		return !exists;
+	}
+	
+	
+	public List<Product> getProductsByPriceGreater(double price) {
+		return this.repo.getByPriceGreater(price);
 	}
 }
