@@ -67,8 +67,8 @@ public class ProductController {
 	    }
 	 
 	 @GetMapping("/{price}")  
-	    public ResponseEntity<List<Product>> getProductsByPriceGreater(@PathVariable double price) {
-	        ResponseEntity<List<Product>> response = new ResponseEntity<List<Product>>(this.service.getProductsByPriceGreater(price), HttpStatus.OK); // 200       
+	    public ResponseEntity<List<Product>> findByPriceGreaterThan(@PathVariable double price) {
+	        ResponseEntity<List<Product>> response = new ResponseEntity<List<Product>>(this.service.findByPriceGreaterThan(price), HttpStatus.OK); // 200       
 	        return response;
 	 }
 }

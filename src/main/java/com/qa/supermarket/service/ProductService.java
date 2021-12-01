@@ -58,7 +58,7 @@ public class ProductService {
 	}
 	
 	
-	public List<Product> getProductsByPriceGreater(double price) {
-		return this.repo.getByPriceGreater(price);
+	public List<Product> findByPriceGreaterThan(double price) {
+		return this.repo.findByPriceGreaterThan(price);
 	}
 }

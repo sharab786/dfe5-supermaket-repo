@@ -15,9 +15,9 @@ import com.qa.supermarket.datamodel.Product;
 
 public interface ProductRepo extends JpaRepository<Product, Integer> {
 	
+	List<Product> findByPriceGreaterThan(double price);
 	
-	@Query("SELECT p FROM Product p WHERE p.price > ?1")
-	List<Product> getByPriceGreater(double price);	
+
 	
 	
 }

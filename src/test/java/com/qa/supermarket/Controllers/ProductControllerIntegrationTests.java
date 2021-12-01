@@ -96,7 +96,7 @@ public class ProductControllerIntegrationTests {
 	
 	
 	@Test
-	void getProductsByPriceGreaterTest() throws Exception{
+	void findByPriceGreaterThanTest() throws Exception{
 		
 		String listOfProductssAsJSON = this.mapper.writeValueAsString(
 				List.of(new Product(3, "Superstar Trainers", "Footwear", 179.50, "white", 24, true),
