@@ -1,6 +1,10 @@
 package com.qa.supermarket.repo;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
 
 import com.qa.supermarket.datamodel.Product;
 
@@ -10,6 +14,10 @@ import com.qa.supermarket.datamodel.Product;
 // create, delete , insert and update.
 
 public interface ProductRepo extends JpaRepository<Product, Integer> {
+	
+	List<Product> findByPriceGreaterThan(double price);
+	
+
 	
 	
 }

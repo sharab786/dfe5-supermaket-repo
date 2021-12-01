@@ -75,7 +75,7 @@ public class ProductControllerIntegrationTests {
 	
 	// Test the update API
 	@Test
-	void updateProduct() throws Exception{
+	void updateProductTest() throws Exception{
 		String testProductAsJsonResponse = this.mapper.writeValueAsString(new Product(2, "Sausage Multi", "Dresses", 50.50, "red", 50, false));
 		
 		RequestBuilder request = put("/product/update/2").contentType(MediaType.APPLICATION_JSON).content(testProductAsJsonResponse);
@@ -89,8 +89,27 @@ public class ProductControllerIntegrationTests {
 	
 	// This is the delete API test
 	@Test
-	void deleteProduct() throws Exception{
+	void deleteProductTest() throws Exception{
 			
 	this.mvc.perform(delete("/product/delete/2")).andExpect(status().isOk());
+	}
+	
+	
+	@Test
+	void findByPriceGreaterThanTest() throws Exception{
+		
+		String listOfProductssAsJSON = this.mapper.writeValueAsString(
+				List.of(new Product(3, "Superstar Trainers", "Footwear", 179.50, "white", 24, true),
+						new Product(4, "Rustic Soft", "Coats", 90.00, "turquoise", 252, true)
+						));
+
+		
+		RequestBuilder request = get("/product/60.50");
+		
+		ResultMatcher status = status().isOk();
+		ResultMatcher content = content().json(listOfProductssAsJSON);
+		
+		this.mvc.perform(request).andExpect(status).andExpect(content);
+		
 	}
 }
