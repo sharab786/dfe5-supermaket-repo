@@ -2,11 +2,11 @@
 
 
 
-!-- PROJECT LOGO -->
+<!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/sharab786/dfe5-supermaket-repo">
-    <img src="images/logo.jpg" alt="Logo" width="80" height="80">
+    <img src="images/logo.jpg" alt="Logo" width="180" height="180">
   </a>
 
 <h3 align="center">Smashing Supermarket</h3>
@@ -50,7 +50,7 @@
     </li>
     <li><a href="#how_did_it_go">How did it go?</a></li>
     <li><a href="#future_revisions_of_the_project">Future revisions of the project</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="##acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -84,11 +84,11 @@ I believe this would go well since i have learnt these skills during the bootcam
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-<!-- Spring Profiles
+<!-- Spring Profiles -->
 ## Spring Profiles
 Since the requirement was to be able to connect to either H2 database or MySQL database depending on the requirement. To be able to configue different databases at runtime I have created two additional application property files. In the application.properties that comes with Spring Boot by default i have set spring.profiles.active to the active profile to be used.
 
-<!-- Test Profile
+<!-- Test Profile -->
 > **Test Profile**
 
 The test profile will use the H2 database.
@@ -96,13 +96,11 @@ The test profile will use the H2 database.
 ```Java	
 spring.profiles.active=test
 ```
-
-<img src="images/profiles/TestProfile.jpg" alt="H2 Test Connection" width="180" height="180">
-
-<img src="images/profiles/TestProfile2.jpg" alt="H2 Database showing product table" width="180" height="180">
+![H2 Test Connection](images/profiles/TestProfile.png)
+![H2 Database showing product table](images/profiles/TestProfile2.png)
 
 
-<!-- Prod Profile
+<!-- Prod Profile -->
 > **Prod  Profile**
 	
 ```Java	
@@ -111,19 +109,16 @@ spring.profiles.active=prod
 
 The prod profile will use the MySQL database.
 
-<img src="images/profiles/ProdProfile.jpg" alt="Schema created in MySQL">
-
-<img src="images/profiles/ProdProfile2.jpg" alt="MSQL Database showing product table" width="180" height="180">
+![Schema created in MySQL](images/profiles/ProdProfile.png)
+![MSQL Database showing product table](/images/profiles/ProdProfile2.png)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 # REST API
 
 The REST API to the supermaket app is described below.
 
-<!-- Create API
+<!-- Create API-->
 ## Create API
 
 ### Create a new Product
@@ -138,33 +133,33 @@ This particular test was done with both H2 and MySQL databases to show it works 
 
 The H2 database before firing the request.
 
-![create_request](images/create/preapih2database.png)
+![create_request_h2_predatabase](images/create/preapih2database.png)
 
 The MySQL database before firing the request.
 
-![create_request](images/create/preapimysqldatabase.png)
+![create_request_mysql_predatabase](images/create/preapimysqldatabase.png)
 	
 #### Response
 
-![create_request](images/create/create_response.png)
+![create_response](images/create/create_response.png)
 
 The H2 database after firing the request.
 
-![create_request](images/create/postapih2database.png)
+![create_response_h2_postdatabase](images/create/postapih2database.png)
 
 The MySQL database after firing the request.
 
-![create_request](images/create/postapimysqldatabase.png)
+![create_request_mysql_postdatabase](images/create/postapimysqldatabase.png)
 
 
 #### Integration test 
 
-![create_request](images/create/create_response.png)
+![create_integrationtest](images/create/create_integrationtest.png)
 
 
 
 
-<!-- Get All API
+<!-- Get All API -->
 ## Get All API
 
 ### Get list of all Products
@@ -181,7 +176,7 @@ The MySQL database after firing the request.
 #### Integration test 
 
 
-<!-- Update API
+<!-- Update API -->
 ## Update API
 
 ### Change a product by id
@@ -202,7 +197,7 @@ The MySQL database after firing the request.
 #### Integration test 
 
 
-<!-- Delete API
+<!-- Delete API -->
 ## Delete API
 
 ### Delete product by id
@@ -223,7 +218,7 @@ The MySQL database after firing the request.
 
 
 
-<!-- Get API greater than price
+<!-- Get API greater than price -->
 ## Get API greater than price
 
 ### Get Products greater than price API
