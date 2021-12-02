@@ -141,6 +141,8 @@ The MySQL database before firing the request.
 	
 #### Response
 
+**Status code :** _201 Created_
+
 ![create_response](images/create/create_response.png)
 
 The H2 database after firing the request.
@@ -153,6 +155,8 @@ The MySQL database after firing the request.
 
 
 #### Integration test 
+
+This test created a product and then checked to see if product was created and check the response status _is created_.
 
 ![create_integrationtest](images/create/create_integrationtest.png)
 
@@ -170,15 +174,23 @@ The MySQL database after firing the request.
 
 ![getall_request](images/getall/getall_request.png)
 
+The screenshot below shows the database prior to firing the Get API.
+
 ![getall_request_databaseview](images/getall/preapidatabase.png)
 	
 #### Response
+
+**Status code :** _200 OK_
+
+The response as shown below is to get a list of all the products in the products table.
 
 ![getall_response](images/getall/getall_response1.png)
 
 ![getall_response2](images/getall/getall_response2.png)
 
 #### Integration test 
+
+This test checked to see if all products were displayed ( against some test data ) and check the response status _isOk_.
 
 ![getall_integrationtest](images/getall/getall_integrationtest.png)
 
@@ -193,18 +205,31 @@ The MySQL database after firing the request.
 
 `PUT /product/{id}`
 
+Request to update product with id of 4. The reqest is to update the price and the colour of the product.
+
 ![update_request](images/update/update_request.png)
+
+Below, shows database view prior to firing the Update API.
 
 ![update_request_databaseview](images/update/preapidatabase.png)
 	
 	
 #### Response
 
+**Status code :** _202 Accepted_
+
+The product has been updated with the new price and new colour.
+
 ![update_response](images/update/update_response.png)
 
-![update_response2](images/update/update_postapidatabase.png)
+The screenbelow shows the database after API fired.
+
+![update_response_viewdatabase](images/update/postapidatabase.png)
 
 #### Integration test 
+
+This test checked to see if product was updated correctly and check the response status _isAccepted_.
+
 
 ![update_integrationtest](images/update/update_integrationtest.png)
 
@@ -219,18 +244,28 @@ The MySQL database after firing the request.
 
 `DELETE /product/{id}`
 
+This API will be used to delete a product of id 2.
+
 ![delete_request](images/delete/delete_request.png)
+
+Database prior to firing Delete API.
 
 ![delete_request_databaseview](images/delete/preapidatabase.png)
 
 	
 #### Response
 
+**Status code :** _200 Ok_
+
+Product of id 2 has been deleted.
+
 ![delete_response](images/delete/delete_response.png)
 
 ![delete_response_databaseview](images/delete/postapidatabase.png)
 
 #### Integration test 
+
+This test deleted a product and check the response status _is oK_.
 
 ![delete_integrationtest.png](images/delete/delete_integrationtest.png)
 
@@ -243,6 +278,8 @@ The MySQL database after firing the request.
 
 #### Request
 
+This API will get all products with price over 440.50.
+
 `GET /product/{price}`
 
 ![getbyprice_request](images/getbyprice/getbyprice_request.png)
@@ -252,11 +289,14 @@ The MySQL database after firing the request.
 	
 #### Response
 
+**Status code :** _200 Ok_
+
 ![getbyprice_response](images/getbyprice/getbyprice_response.png)
 
 
 #### Integration test 
 
+This test gets a list of products in the test data which had pice over a ceratin amount and check the response status _is oK_.
 
 ![getbyprice_integrationtest.png](images/getbyprice/getbyprice_integrationtest.png)
 
@@ -273,12 +313,18 @@ Coverage report
 
 ## How did it go?
 
-I think the actual coding and building the product went well. My main challenges were around the writing of this readme since it is the first time I have written one. 
+I think the actual coding and building the product went well. The basic CRUD opertions were ok. My main challenges were around the writing of this readme since it is the first time I have written one. 
 	
 <p align="right">(<a href="#top">back to top</a>)</p>	
 
 ## Possible improvements for future revisions of the project.
-	Could also implement customers table and also a transaction table 
+There are a number of improvements that can be made for future revisions of the project. Before starting, a new database design with several tables and also a revised products table would be created, to make sure we apply the data normalization rules to see if the tables are structured correctly.
+
+	* Implement customers entity with full set of CRUD operations to manage customers.
+	* Implement orders entity showing the orders placed by customers with full set of CRUD operations to manage orders.
+	* Implement orderdetails entity showing the poducts whichin each order with full set of CRUD operations to manage order details.
+	* You could do the the same with suppliers and shippers with full set of CRUD operations to manage them. 
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
