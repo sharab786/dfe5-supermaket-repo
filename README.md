@@ -19,7 +19,7 @@
     ·
     <a href="/documentation/Entity.pdf">View ERD</a>
     ·
-    <a href="/documentation/Entity.pdf">Risk Register</a>
+    <a href="/documentation/Risk.pdf">Risk Register</a>
   </p>
 </div>
 
