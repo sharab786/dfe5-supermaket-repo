@@ -43,7 +43,7 @@ public class ProductControllerIntegrationTests {
 		String testProductAsJson = this.mapper
 				.writeValueAsString(new Product(null, "Big Hoodie", "Sportswear", 49.99, "blue", 495, true));
 		String testProductAsJsonResponse = this.mapper
-				.writeValueAsString(new Product(6, "Big Hoodie", "Sportswear", 49.99, "blue", 495, true));
+				.writeValueAsString(new Product(7, "Big Hoodie", "Sportswear", 49.99, "blue", 495, true));
 
 		RequestBuilder request = post("/product/create").contentType(MediaType.APPLICATION_JSON)
 				.content(testProductAsJson);
@@ -62,7 +62,8 @@ public class ProductControllerIntegrationTests {
 						new Product(2, "Sausage Multi", "Dresses", 50.50, "orange", 100, false),
 						new Product(3, "Superstar Trainers", "Footwear", 179.50, "white", 24, true),
 						new Product(4, "Rustic Soft", "Coats", 90.00, "turquoise", 252, true),
-						new Product(5, "Awesome Fresh Joggers", "Sportswear", 29.99, "black", 495, false)));
+						new Product(5, "Awesome Fresh Joggers", "Sportswear", 29.99, "black", 495, false),
+						new Product(6, "Gala Shoes", "Footwear", 20.00, "grey", 24, false)));
 
 		RequestBuilder request = get("/product");
 
@@ -95,6 +96,7 @@ public class ProductControllerIntegrationTests {
 	}
 	
 	
+		
 	@Test
 	void findByPriceGreaterThanTest() throws Exception{
 		
@@ -112,4 +114,28 @@ public class ProductControllerIntegrationTests {
 		this.mvc.perform(request).andExpect(status).andExpect(content);
 		
 	}
+	
+	
+	@Test
+	void getByCategoryAndActiveForSale() throws Exception{
+		
+		String listOfProductssAsJSON = this.mapper.writeValueAsString(
+				List.of(new Product(1, "Awesome Fresh Shoes", "Footwear", 59.99, "black", 495, true),
+						new Product(3, "Superstar Trainers", "Footwear", 179.50, "white", 24, true)
+						));
+
+		
+		RequestBuilder request = get("/product/find/Footwear/true");
+		
+		ResultMatcher status = status().isOk();
+		ResultMatcher content = content().json(listOfProductssAsJSON);
+		
+		this.mvc.perform(request).andExpect(status).andExpect(content);
+		
+	}
+	
+	
+	
+	
+	
 }
