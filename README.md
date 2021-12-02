@@ -31,25 +31,25 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#why-are-we-doing-this?">Why are we doing this?</a>
+      <a href="#why-are-we-doing-this">Why are we doing this?</a>
       <ul>
         <li><a href="#spring-boot-dependencies">Spring Boot Dependencies</a></li>
       </ul>
     </li>
     <li><a href="#how-i-expected-the-challenge-to-go">How I expected the challenge to go</a></li>
-    <li><a href="#spring_profiles">Spring Profiles</a></li>
+    <li><a href="#spring-profiles">Spring Profiles</a></li>
     <li>
-      <a href="#rest_api">Rest API</a>
+      <a href="#rest-api">Rest API</a>
       <ul>
-        <li><a href="#create_api">Create API</a></li>
-        <li><a href="#get_all_api">Get All API</a></li>
-	<li><a href="#update_api">Update API</a></li>
-	<li><a href="#delete_api">Delete API</a></li>
-	<li><a href="#get_api_greater_than_price">Get API greater than price</a></li>
+        <li><a href="#create-api">Create API</a></li>
+        <li><a href="#get_all-api">Get All API</a></li>
+	<li><a href="#update-api">Update API</a></li>
+	<li><a href="#delete-api">Delete API</a></li>
+	<li><a href="#get-api-greater-than-price">Get API greater than price</a></li>
       </ul>
     </li>
-    <li><a href="#how_did_it_go">How did it go?</a></li>
-    <li><a href="#future_revisions_of_the_project">Future revisions of the project</a></li>
+    <li><a href="#how-did-it-go">How did it go?</a></li>
+    <li><a href="#future-revisions-of-the-project">Future revisions of the project</a></li>
     <li><a href="##acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -168,12 +168,20 @@ The MySQL database after firing the request.
 
 `Get /product`
 
+![getall_request](images/getall/getall_request.png)
+
+![getall_request_databaseview](images/getall/preapidatabase.png)
 	
 #### Response
 
+![getall_response](images/getall/getall_response1.png)
 
+![getall_response2](images/getall/getall_response2.png)
 
 #### Integration test 
+
+![getall_integrationtest](images/getall/getall_integrationtest.png)
+
 
 
 <!-- Update API -->
@@ -185,16 +193,21 @@ The MySQL database after firing the request.
 
 `PUT /product/{id}`
 
+![update_request](images/update/update_request.png)
 
+![update_request_databaseview](images/update/preapidatabase.png)
+	
 	
 #### Response
 
+![update_response](images/update/update_response.png)
 
+![update_response2](images/update/update_postapidatabase.png)
 
 #### Integration test 
 
+![update_integrationtest](images/update/update_integrationtest.png)
 
-#### Integration test 
 
 
 <!-- Delete API -->
@@ -206,15 +219,20 @@ The MySQL database after firing the request.
 
 `DELETE /product/{id}`
 
+![delete_request](images/delete/delete_request.png)
+
+![delete_request_databaseview](images/delete/preapidatabase.png)
 
 	
 #### Response
 
+![delete_response](images/delete/delete_response.png)
 
+![delete_response_databaseview](images/delete/postapidatabase.png)
 
 #### Integration test 
 
-
+![delete_integrationtest.png](images/delete/delete_integrationtest.png)
 
 
 
@@ -227,22 +245,20 @@ The MySQL database after firing the request.
 
 `GET /product/{price}`
 
+![getbyprice_request](images/getbyprice/getbyprice_request.png)
+
+![getbyprice_request_databaseview](images/getbyprice/preapidatabase.png)
 
 	
 #### Response
 
+![getbyprice_response](images/getbyprice/getbyprice_response.png)
 
 
 #### Integration test 
 
 
-
-
-
-
-
-
-
+![getbyprice_integrationtest.png](images/getbyprice/getbyprice_integrationtest.png)
 
 
 ## Tests
