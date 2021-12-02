@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-
 import com.qa.supermarket.datamodel.Product;
 import com.qa.supermarket.repo.ProductRepo;
 
@@ -60,5 +59,9 @@ public class ProductService {
 	
 	public List<Product> findByPriceGreaterThan(double price) {
 		return this.repo.findByPriceGreaterThan(price);
+	}
+	
+	public List<Product> getByCategoryAndActiveForSale(String category, boolean activeForSale) {
+		return this.repo.getByCategoryAndActiveForSale(category, activeForSale);
 	}
 }

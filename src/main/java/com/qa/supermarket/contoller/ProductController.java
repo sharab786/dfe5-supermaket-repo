@@ -71,4 +71,15 @@ public class ProductController {
 	        ResponseEntity<List<Product>> response = new ResponseEntity<List<Product>>(this.service.findByPriceGreaterThan(price), HttpStatus.OK); // 200       
 	        return response;
 	 }
+	 
+	 
+	 @GetMapping("/find/{category}/{activeForSale}")  
+	    public ResponseEntity<List<Product>> getByCategoryAndActiveForSale(@PathVariable String category, @PathVariable boolean activeForSale) {
+	        ResponseEntity<List<Product>> response = new ResponseEntity<List<Product>>(this.service.getByCategoryAndActiveForSale(category, activeForSale),  HttpStatus.OK);     
+	        return response;
+	    }
+	 
+	 
+	 
+	 
 }
