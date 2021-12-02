@@ -46,8 +46,10 @@
 	<li><a href="#update-api">Update API</a></li>
 	<li><a href="#delete-api">Delete API</a></li>
 	<li><a href="#get-api-greater-than-price">Get API greater than price</a></li>
+	<li><a href="#get-api-category-and-active-for-sale">Get API category and active for sale</a></li>
       </ul>
     </li>
+    <li><a href="#test_coverage_report">Test Coverage</a></li>
     <li><a href="#how-did-it-go">How did it go?</a></li>
     <li><a href="#future-revisions-of-the-project">Future revisions of the project</a></li>
     <li><a href="##acknowledgments">Acknowledgments</a></li>
@@ -160,7 +162,7 @@ This test created a product and then checked to see if product was created and c
 
 ![create_integrationtest](images/create/create_integrationtest.png)
 
-
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- Get All API -->
@@ -194,6 +196,7 @@ This test checked to see if all products were displayed ( against some test data
 
 ![getall_integrationtest](images/getall/getall_integrationtest.png)
 
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- Update API -->
@@ -233,6 +236,7 @@ This test checked to see if product was updated correctly and check the response
 
 ![update_integrationtest](images/update/update_integrationtest.png)
 
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- Delete API -->
@@ -269,7 +273,7 @@ This test deleted a product and check the response status _is oK_.
 
 ![delete_integrationtest.png](images/delete/delete_integrationtest.png)
 
-
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- Get API greater than price -->
 ## Get API greater than price
@@ -296,24 +300,59 @@ This API will get all products with price over 440.50.
 
 #### Integration test 
 
-This test gets a list of products in the test data which had pice over a ceratin amount and check the response status _is oK_.
+This test gets a list of products in the test data which had price over a certain amount and check the response status _is oK_.
 
 ![getbyprice_integrationtest.png](images/getbyprice/getbyprice_integrationtest.png)
 
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## Tests
+<!-- Get API category and active for sale -->
+## Get API category and active for sale
 
-So as you can see from above the integration tests were all carried out successfully. In terms of the test coverage, i managed to achieve a 94.6% test coverage of the src/main/java folder.
+### Get Products of specific category and whether it is active for sale
+
+#### Request
+
+This API will get all products of category footwear and which are active for sale.
+
+`GET /product//find/{category}/{activeForSale}`
+
+Get list of products which are footwear and active for sale.
+
+![getbycategoryandactive_request](images/getbycatandactive/getbycategoryandactiveforsale_request.png)
+
+![getbycategoryandactive_databaseview](images/getbycatandactive/preapidatabase.png)
+
+	
+#### Response
+
+**Status code :** _200 Ok_
+
+![getbycategoryandactive_response](images/getbycatandactive/getbycategoryandactiveforsale_response.png)
+
+
+#### Integration test 
+
+This test gets a list of products in the test data of a certain category and if active for sale and check the response status _is oK_.
+
+![getbycategoryandactive_integrationtest.png](images/getbycatandactive/getbycategoryandactiveforsale_integrationtest.png)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Test Coverage
+
+So as you can see from above the integration tests were all carried out successfully. In terms of the test coverage, i managed to achieve a 95.0% test coverage of the src/main/java folder.
 </br>
 Coverage report
 
-![create_request](images/test_coverage.png)
+![test_coverage_report](images/test_coverage.png)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## How did it go?
 
 I think the actual coding and building the product went well. The basic CRUD opertions were ok. My main challenges were around the writing of this readme since it is the first time I have written one. 
+There was one request i found challenging which was Sup6 on the <a href="https://shahid12.atlassian.net/jira/software/projects/SUP/boards/2">Jira Board</a>. This was an API to update the quantity of the product by just specifying the quantity field to update. This would be using the patch api and since we are not returning the whole object another approach would be required. This was past the MVP and was a bonus.
 	
 <p align="right">(<a href="#top">back to top</a>)</p>	
 
