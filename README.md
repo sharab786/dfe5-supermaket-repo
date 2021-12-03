@@ -49,7 +49,7 @@
 	<li><a href="#get-api-category-and-active-for-sale">Get API category and active for sale</a></li>
       </ul>
     </li>
-    <li><a href="#test_coverage_report">Test Coverage</a></li>
+    <li><a href="#test_coverage">Test Coverage</a></li>
     <li><a href="#how-did-it-go">How did it go?</a></li>
     <li><a href="#future-revisions-of-the-project">Future revisions of the project</a></li>
     <li><a href="##acknowledgments">Acknowledgments</a></li>
