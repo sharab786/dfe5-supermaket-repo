@@ -42,17 +42,17 @@
       <a href="#rest-api">Rest API</a>
       <ul>
         <li><a href="#create-api">Create API</a></li>
-        <li><a href="#get_all-api">Get All API</a></li>
+        <li><a href="#get-all-api">Get All API</a></li>
 	<li><a href="#update-api">Update API</a></li>
 	<li><a href="#delete-api">Delete API</a></li>
 	<li><a href="#get-api-greater-than-price">Get API greater than price</a></li>
 	<li><a href="#get-api-category-and-active-for-sale">Get API category and active for sale</a></li>
       </ul>
     </li>
-    <li><a href="#test_coverage_report">Test Coverage</a></li>
+    <li><a href="#test-coverage">Test Coverage</a></li>
     <li><a href="#how-did-it-go">How did it go?</a></li>
-    <li><a href="#future-revisions-of-the-project">Future revisions of the project</a></li>
-    <li><a href="##acknowledgments">Acknowledgments</a></li>
+    <li><a href="#possible-improvements-for-future-revisions-of-the-project">Future revisions of the project</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -356,7 +356,7 @@ There was one request i found challenging which was Sup6 on the <a href="https:/
 	
 <p align="right">(<a href="#top">back to top</a>)</p>	
 
-## Possible improvements for future revisions of the project.
+## Possible improvements for future revisions of the project
 There are a number of improvements that can be made for future revisions of the project. Before starting, a new database design with several tables and also a revised products table would be created, to make sure we apply the data normalization rules to see if the tables are structured correctly.
 
 	* Implement customers entity with full set of CRUD operations to manage customers.
